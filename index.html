@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+</head>
+
+<body>
+  <button type="button" onClick="downloadSvg()">download svg</button>
+  <br />
+  <div id="plan" />
+</body>
+<script src="plan-creator.js"></script>
+<script src="example-property-source.js"></script>
+<script>
+  function downloadSvg() {
+    const e = document.createElement("script");
+    e.setAttribute(
+      "src",
+      "https://nytimes.github.io/svg-crowbar/svg-crowbar.js"
+    );
+    e.setAttribute("class", "svg-crowbar");
+    document.body.appendChild(e);
+  }
+</script>
+<script>
+  insertPlan({ element: document.getElementById("plan"), property: fwa254, svg: { width: 400, height: 800 } });
+</script>
+
+</html>
